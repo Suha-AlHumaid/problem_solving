@@ -1,25 +1,33 @@
 
 function highestRank(arr){
-    let num=0;
-    let num2= 0;
-    for (let i =0 ; i <arr.length ; i++)
-    {
-        let curr = 1
+    arr.sort();
+    let max_count = 1; 
+    let res = arr[0];
+    let curr_count = 1;
 
-        for (let j=1 ; j<arr.length; j++)
+       
+    for (let i = 1; i < arr.length; i++)
+    {
+        if (arr[i] == arr[i - 1])
+            curr_count++;
+        else
         {
-           
-            if (arr[i]==arr[j]){
-                num++
-                if(num>curr){
-                    num2=arr[i]
-                   }
-                   else if (num2 == curr)
-                   num2 = Math.min(num2, arr[i])
-            } 
+            if (curr_count > max_count)
+            {
+                max_count = curr_count;
+                res = arr[i - 1];
+            }
+            curr_count = 1;
         }
     }
-    return num2
+   
+    // If last element is most frequent
+    if (curr_count > max_count)
+    {
+        max_count = curr_count;
+        res = arr[arr.length - 1];
+    }
+   return res
     }
 
 console.log(highestRank([12,10,8,8,3,3,3,3,2,4,10,12,10]))
