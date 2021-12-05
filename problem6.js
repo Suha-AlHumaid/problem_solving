@@ -10,6 +10,30 @@ var list1 = [
 //     { firstName: 'Sou', lastName: 'B.', country: 'Japan', continent: 'Asia', age: 49, language: 'PHP' },
 //   ] 
 
+
+
+
+// [ { firstName: 'Mark',
+//     lastName: 'G.',
+//     country: 'Scotland',
+//     continent: 'Europe',
+//     age: 22,
+//     language: 'JavaScript' },
+//   
+// { firstName: 'Victoria',
+//     lastName: 'T.',
+//     country: 'Puerto Rico',
+//     continent: 'Americas',
+//     age: 30,
+//     language: 'Clojure' } ]
+//  to deeply equal
+//   [ { firstName: 'Victoria',
+//     lastName: 'T.',
+//     country: 'Puerto Rico',
+//     continent: 'Americas',
+//     age: 30,
+//     language: 'Clojure' } ]
+
     // thank you for checking out the Coding Meetup kata :)
     function findSenior(list) {
         // thank you for checking out the Coding Meetup kata :)
