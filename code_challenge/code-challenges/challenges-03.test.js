@@ -4,11 +4,9 @@
 CHALLENGE 1 - Review
 
 Write a function named addAnimal that takes in array of animals (strings) and some callback function. 
-
-This function should first create a new array. Then iterate over the input array and modify each value based on the callback function provided.
-
+This function should first create a new array. Then iterate over the input array and modify each value 
+based on the callback function provided.
 Push each updated animal string into the new array. Return the new array. 
-
 HINT: Look at the tests to see how the callback functions are used.
 
 ------------------------------------------------------------------------------------------------ */
@@ -23,6 +21,11 @@ function lower(str) {
 
 const updateAnimal = (arr, callback) => {
   // Solution code here...
+  const newArr = [];
+ arr.forEach(elem=>{
+  newArr.push(callback(elem))
+  })
+  return newArr
 };
 
 /* ------------------------------------------------------------------------------------------------
