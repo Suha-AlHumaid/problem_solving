@@ -4,29 +4,41 @@
 
 CHALLENGE 1 - Review
 
-Write a function named raisedToTheThird that takes in an array of numbers and returns a new array of each of those numbers raised to the 3rd power (hint: look up Math.pow()). Use forEach to solve this problem.
+Write a function named raisedToTheThird that takes in an array of numbers 
+//and returns a new array of each of those numbers raised to the 3rd power (hint: look up Math.pow()). Use forEach to solve this problem.
 
 ------------------------------------------------------------------------------------------------ */
 
 const raisedToTheThird = (arr) => {
   // Solution code here...
+  const newArr=[]
+  arr.forEach((elem)=>{
+    newArr.push(Math.pow(elem,3))
+  })
+  return newArr
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function that appends ' The end.' to a string, and returns the modified string. The original source string should not be modified.
+Write a function that appends ' The end.' to a string, and returns the modified string.
+The original source string should not be modified.
 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
   // Solution code here...
+  let txt = ""
+  txt = str + " The end."
+  return txt
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function that accepts an array and copies the first element to the end of the array. The change should be reflected in the source array that was passed in to the function. That is, the function should modify the array 'in place'.
+Write a function that accepts an array and copies the first element to the end of the array. 
+The change should be reflected in the source array that was passed in to the function. That is, 
+the function should modify the array 'in place'.
 
 Do not use a return statement.
 
@@ -38,14 +50,20 @@ console.log(a) prints [1, 2, 3, 1]
 
 const appendFirstToLast = (arr) => {
   // Solution code here...
+  let x = arr[0]
+  arr.push(x)
+  return arr
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function that accepts an object and an integer as arguments and adds a new property to the object called yearBorn. The value of the yearBorn property should be the integer that was passed in.
+Write a function that accepts an object and an integer as arguments and 
+adds a new property to the object called 
+yearBorn. The value of the yearBorn property should be the integer that was passed in.
 
-The change should be reflected in the source object that was passed in to the function. That is, the function should modify the object 'in place'.
+The change should be reflected in the source object that was passed in to the function. That is, the function 
+should modify the object 'in place'.
 
 Do not use a return statement.
 
@@ -57,12 +75,16 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 
 const addBirthYearProperty = (obj, year) => {
   // Solution code here...
+  obj.yearBorn=year
+  return obj
+
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
 
-Write a function that accepts an array of people objects and adds a new property called isAuthor to each object in the list. Set the value of the new property to true.
+Write a function that accepts an array of people objects 
+and adds a new property called isAuthor to each object in the list. Set the value of the new property to true.
 
 The function should modify the object in place. Do not use a return statement.
 
@@ -74,6 +96,10 @@ console.log(people[1].isAuthor) prints true
 
 const setStatusAsAuthor = (people) => {
   // Solution code here...
+  people.map (elem=>(
+    elem.isAuthor= true
+  ))
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,6 +119,7 @@ console.log(a) prints [1, 2, 3, 4]
 
 const append = (arr1, arr2) => {
   // Solution code here...
+  arr2.forEach(elem=>(arr1.push(elem)))
 };
 
 /* ------------------------------------------------------------------------------------------------
