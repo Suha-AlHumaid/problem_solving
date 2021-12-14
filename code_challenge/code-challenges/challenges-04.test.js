@@ -1,30 +1,43 @@
 "use strict";
 
+const { add } = require("cheerio/lib/api/traversing");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function called addTwo that takes in an array and adds two to every value using a for loop. Place the new value in a new array. Return the new array. 
+Write a function called addTwo that takes in an array and
+ adds two to every value using a for loop. Place the new value in a new array. Return the new array. 
 ------------------------------------------------------------------------------------------------ */
 
 const addTwo = (arr) => {
   // Solution code here...
+  const newArr=arr.map(elem=>
+elem+2
+  )
+  return newArr
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not. 
+Write a function named containsW that takes in a string. 
+This function should use a regular expression pattern to return true if the string contains the letter 'w' 
+in lower case or false if it does not. 
 
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
   // Solution code here...
+  const result=str.includes("w")
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named isNum that takes in a string or number of any length. This function should use a regular expression pattern to return true if the input contains a number, and false if the input does not contain a number.
+Write a function named isNum that takes in a string or number of any length. 
+This function should use a regular expression pattern to return true if the input contains a number,
+and false if the input does not contain a number.
 
 For example:
 12345 returns true
@@ -35,29 +48,48 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  let string = String(input);
+  for( let i = 0; i < string.length; i++){
+      if(!isNaN(string.charAt(i)) && !(string.charAt(i) === " ") ){
+        return true;
+      }
+  }
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named containsWorld that takes in a string or number of any length. This function should use a regular expression pattern to return true if the input contains the word 'world' all in lower-case letters, and false if the input does not.
+Write a function named containsWorld that takes in a string or number of any length.
+ This function should use a regular expression pattern to return true if the input contains the word 
+ 'world' all in lower-case letters, and false if the input does not.
 
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
   // Solution code here...
+  let string = String(input);
+  for( let i = 0; i < string.length; i++){
+    if(string.includes("world")){
+      return true;
+    }
+}
+return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function named isCapitalized that takes in a string. This function should use a regular expression pattern to match all words that begin with a capital letter. It should only match words, not punctuation.
+Write a function named isCapitalized that takes in a string. 
+This function should use a regular expression pattern to match all words that begin with a capital letter.
+ It should only match words, not punctuation.
 
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -104,9 +136,11 @@ CHALLENGE 9 - Stretch Goal
 
 You want to teach a friend how to play hangman and want to show them using a partially complete puzzle.
 
-Write a function named hangman which uses the replace method to remove all of the vowels (a, e, i, o, u) from the hangman string, regardless of capitalization, and replace them with an underscore.
+Write a function named hangman which uses the replace method to remove all of the vowels (a, e, i, o, u)
+from the hangman string, regardless of capitalization, and replace them with an underscore.
 
-The function should return a string containing the consonants in their original positions and underscores where the vowels were previously located.
+The function should return a string containing the consonants in their original positions and underscores 
+where the vowels were previously located.
 
 For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
@@ -129,7 +163,13 @@ const seashells =
   "She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I'm sure she sells seashore shells.";
 
 const findShells = (str) => {
-  // Solution code here...
+
+//   const arr = str.split(" ")
+//   console.log(arr);
+//   const newArr=arr.fillter(elem=>
+//     elem.includes("ells")
+//   )
+// return newArr
 };
 
 /* ------------------------------------------------------------------------------------------------

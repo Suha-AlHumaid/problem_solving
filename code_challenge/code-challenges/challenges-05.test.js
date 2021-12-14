@@ -366,7 +366,7 @@ describe("Testing challenge 9", () => {
     list = [6, 3, 19, 43, 12, 66, 43];
     removeEvenValues(list);
     expect(list).toStrictEqual([3, 19, 43, 43]);
-    expect(list.length).toStrictEqual(4);
+    expect(removeEvenValues(list).length).toStrictEqual(4);
   });
 });
 

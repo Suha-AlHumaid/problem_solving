@@ -31,13 +31,15 @@ const updateAnimal = (arr, callback) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function called sortNames that takes an array of names and sorts them alphabetically. Capital letters should come before lowercase letters.
+Write a function called sortNames that takes an array of names and sorts them alphabetically.
+Capital letters should come before lowercase letters.
 
 For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
 const sortNames = (arr) => {
   // Solution code here...
+  return arr.sort()
 };
 
 /* ------------------------------------------------------------------------------------------------
