@@ -63,6 +63,8 @@ const sortByChildren = (charArray) => {
 	  );
 
 };
+//Done
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -87,7 +89,9 @@ const courseInfo = {
 
 const getCourseKeys = (obj) => {
 	// Solution code here...
+	return Object.keys(obj);
 };
+//Done
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -98,7 +102,13 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-	// Solution code here...
+
+	for (const elem in obj) {
+	if(obj[elem]===value){
+		return true
+	}
+	}
+	return false
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -127,18 +137,23 @@ const updateNumbers = (obj) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function named getHouses that returns a new array containing the names of all of the houses in the data set.
+Write a function named getHouses that returns 
+a new array containing the names of all of the houses in the data set.
 ------------------------------------------------------------------------------------------------ */
 
 const getHouses = (arr) => {
 	let houses = [];
 	// Solution code here...
+arr.forEach(elem=>
+	houses.push(elem.house))
+	return houses
 };
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named hasChildrenValues that uses Object.values to determine if any given character in the data set has children.
+Write a function named hasChildrenValues that uses 
+Object.values to determine if any given character in the data set has children.
 
 This function should take in an array of data and a character name and return a Boolean.
 
@@ -148,8 +163,12 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-	// Solution code here...
-};
+
+const newArr=arr.filter(elem=>elem.name == character)
+
+return newArr.length==0 ? false:true
+
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
