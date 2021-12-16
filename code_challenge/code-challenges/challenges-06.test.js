@@ -56,7 +56,7 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-	// Solution code here...
+
 
 	 return charArray.sort((a,b)=>
 	  a.children.length - b.children.length
@@ -131,11 +131,12 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-	// Solution code here...
+	Object.values(object1)
 	const arr=[]
 	for (const elem in obj) {
-		
-		arr.push(elem[obj[elem]])
+	
+		let str= `${elem}: ${obj[elem]}`
+		arr.push(str)
 	}
 	return arr
 };
@@ -179,7 +180,8 @@ return newArr.length==0 ? false:true
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
-Write a function named hasChildrenEntries that is similar to your hasChildrenValues function from challenge 4, but uses the data's entries instead of its values.
+Write a function named hasChildrenEntries that is similar to your hasChildrenValues function from challenge 4,
+ but uses the data's entries instead of its values.
 
 The input and output of this function are the same as the input and output from challenge 3.
 ------------------------------------------------------------------------------------------------ */
@@ -195,13 +197,24 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-	// Solution code here...
+let newArr=[]
+let arr1=[]
+arr.forEach(obj=>{
+
+		arr1 =Object.values(obj)
+		newArr=newArr.concat(arr1)
+
+})
+
+return newArr.length
+
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
-Write a function named houseSize that takes in the array of characters and creates an object for each house containing the name of the house and the number of members.
+Write a function named houseSize that takes in the array of characters and 
+creates an object for each house containing the name of the house and the number of members.
 
 All of these objects should be added to an array named "sizes". Return the "sizes" array from the function.
 
@@ -210,6 +223,9 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 
 const houseSize = (arr) => {
 	const sizes = [];
+	arr.forEach(elem=>{
+
+	})
 	// Solution code here...
 };
 

@@ -52,24 +52,27 @@ HINT: Beware... JS default is "Lexical" ordering.
 
 const sortNumbers = (arr) => {
   // Solution code here...
+  return arr.sort((a, b) => a - b);
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, largest to smallest.
+Write a function named sortBackwards that takes in an array of numbers and returns the same array, 
+with the numbers sorted, largest to smallest.
 
 HINT: Do it with a custom sort callback, not with using `.reverse()`. ;) 
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => b - a);
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function named alphabetize that takes in an array of strings and returns the same array with the strings sorted alphabetically.
+Write a function named alphabetize that takes in an array of strings and
+ returns the same array with the strings sorted alphabetically.
 
 In this alphabetization, capital letters come before lower case letters.
 
@@ -77,13 +80,14 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  // Solution code here...
+  return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named sortByPrice that takes in an array of objects, each of which has a 'price' property, and sorts those objects by price, lowest to highest, returning the same array.
+Write a function named sortByPrice that takes in an array of objects, each of which has a 'price' property, 
+and sorts those objects by price, lowest to highest, returning the same array.
 
 Here is an example of the input:
 [
@@ -95,6 +99,8 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
+  return arr.sort((a,b)=> a.price - b.price)
+ 
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -106,9 +112,9 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  // Solution code here...
-};
-
+  return arr.sort((a, b) => a.toLowerCase() > b.toLowerCase()?1 : -1 
+)
+}
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
@@ -117,6 +123,9 @@ Write a function named sortByLength that takes in an array of strings and return
 
 const sortByLength = (arr) => {
   // Solution code here...
+
+  return arr.sort((a, b) =>  a.length - b.length );
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -129,6 +138,7 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 
 const sortNumbersByLength = (arr) => {
   // Solution code here...
+  return arr.sort((a, b) =>  String(a).length - String(b).length);
 };
 
 /*-----------------------------------------------------------------------------------------------
