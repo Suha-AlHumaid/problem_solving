@@ -3,7 +3,8 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function called sortStarWarsCharacters that sorts the characters in the starWarsPeople array by height from tallest to shortest.
+Write a function called sortStarWarsCharacters that sorts the characters in the starWarsPeople array by height
+from tallest to shortest.
 ------------------------------------------------------------------------------------------------ */
 
 let starWarsPeople = [
@@ -25,7 +26,7 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  // Solution code here...
+  return starWarsArr.sort((a, b) => b.height - a.height);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,7 +36,8 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  // Solution code here...
+  arr.splice(idx, 3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,6 +48,9 @@ Write a function named joinArray that takes an array and joins all of the elemen
 
 const joinArray = (arr) => {
   // Solution code here...
+  let str=arr.join(" ");
+  return str
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,7 +68,14 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  let str1 = str;
+
+  for (let i = 0; i <= str.length; i++) {
+    result.push(str1);
+    str1 = str1.slice(1);
+  }
+
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------

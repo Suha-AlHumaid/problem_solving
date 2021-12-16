@@ -10,12 +10,15 @@ E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
   // Solution code here...
+  let max = Math.max(...arr);
+  return max
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named findMax that takes in a matrix of positive numbers and returns the number with the highest value.
+Write a function named findMax that takes in a matrix of positive numbers and 
+returns the number with the highest value.
 
 For example: 
 [
@@ -28,6 +31,13 @@ return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
   // Solution code here...
+  let arr =[]
+matrix.forEach(elem => {
+  let max = Math.max(...elem);
+  arr.push(max)
+});
+let maxArr = Math.max(...arr);
+return maxArr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,7 +55,22 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+  let arr =[]
+  matrix.forEach(elem => {
+    let sum =0
+    elem.forEach(num=>{
+    
+      sum+=num
+    
+    })
+    arr.push(sum)
+  });
+  let result=0
+arr.forEach(elem=>{
+  result +=elem
+})
+  return result
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,7 +78,9 @@ CHALLENGE 4
 
 You friend Pat has a chain of stores around the greater Seattle area. He specializes in selling salmon cookies. Pat has data for the hourly sales of cookies per hour for each store. He wants to create an array of the total number of cookies sold per hour for all of his stores combined.
 
-Write a function named grandTotal that adds up the cookies sales for each hour of operation for all of the stores combined. For example, the first element in the hourlySales array should be the sum of the cookies sold in the 9:00 a.m. hour at all five stores combined.
+Write a function named grandTotal that adds up the cookies sales for each hour of operation for all of the stores 
+combined. For example, the first element in the hourlySales array should be the sum of the cookies sold 
+in the 9:00 a.m. hour at all five stores combined.
 
 For this example, the total at 9:00 a.m. is 17 + 26 + 7 + 5 + 33, or 88 total cookies.
 
