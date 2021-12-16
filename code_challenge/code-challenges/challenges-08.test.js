@@ -3,36 +3,45 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named returnTen, takes in a string and uses split and splice to return the last 10 characters from that string as elements of an array.
+Write a function named returnTen, takes in a string and uses split
+ and splice to return the last 10 characters from that string as elements of an array.
 
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str) {
-  // Solution code here...
+  return str.slice(-10).split('')
 }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named typeNum that, given an array as input, uses filter to return an array containing only the numbers.
+Write a function named typeNum that, given an array as input, 
+uses filter to return an array containing only the numbers.
 
 For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const typeNum = (arr) => {
   // Solution code here...
+
+  const result=arr.filter((item) => typeof item === "number");
+  
+  return result
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named containsAnd that, given an array of strings as input, uses filter to return an array containing only strings that contain 'and' within the string.
+Write a function named containsAnd that, given an array of strings as input,
+ uses filter to return an array containing only strings that contain 'and' within the string.
 
 For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
 const containsAnd = (arr) => {
-  // Solution code here...
+
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
