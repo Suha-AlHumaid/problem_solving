@@ -73,7 +73,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 ------------------------------------------------------------------------------------------------ */
 
 const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+
   return arr.filter(elem=>{
     elem.includes("vowels")
   })
