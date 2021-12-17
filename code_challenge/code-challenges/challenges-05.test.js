@@ -81,13 +81,16 @@ const howMuchPencil = (str) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function name wordsToCharList that, given a string as input, returns a new array where every element is a character of the input string.
+Write a function name wordsToCharList that, given a string as input, returns a new array 
+where every element is a character of the input string.
 
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+ 
+return arr.split("")
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -145,7 +148,11 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+
+  result = recipe.ingredients.map(elem => (
+  elem.split(" ").slice(2).join(" ")
+  ))
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -153,14 +160,21 @@ CHALLENGE 8 - Stretch Goal
 
 Use the same recipe from Challenge 3, above.
 
-Write a function named stepAction that takes in the recipe and extracts the action verbs from the steps. Fortunate for you, the action verbs are the first word of each action.
+Write a function named stepAction that takes in the recipe and extracts the action verbs from the steps. 
+Fortunate for you, the action verbs are the first word of each action.
 
 Return a new array containing just the verbs. For example, ['Mix until evenly distributed'] returns ['Mix'].
 ------------------------------------------------------------------------------------------------ */
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+
+  result = recipe.steps.map((step) => (
+ step.split(" ")[0]
+  ))
+  return result
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -177,7 +191,7 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  return arr.filter((number) => number % 2 !== 0)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -196,13 +210,15 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  return str.slice(0, str.length - numberOfCharacters)
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
 
-Write a function named totalSumCSV that, given a string of comma-separated values (CSV) as input. (e.g. "1,2,3"), returns the total sum of the numeric values (e.g. 6).
+Write a function named totalSumCSV that, 
+given a string of comma-separated values (CSV) as input. (e.g. "1,2,3"),
+ returns the total sum of the numeric values (e.g. 6).
 ------------------------------------------------------------------------------------------------ */
 
 const totalSumCSV = (str) => {
@@ -213,13 +229,14 @@ const totalSumCSV = (str) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 12 - Stretch Goal
 
-Write a function named removeVowels that takes in a string and returns a new string where all the vowels of the original string have been removed.
+Write a function named removeVowels that takes in a string and returns a new string
+ where all the vowels of the original string have been removed.
 
 For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
 const removeVowels = (str) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------

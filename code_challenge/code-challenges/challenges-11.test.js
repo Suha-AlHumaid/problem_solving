@@ -77,7 +77,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  // Solution code here...
+ return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(email)
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,7 +103,9 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+ return /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/.test(phoneNumber)
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -115,7 +118,16 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 ------------------------------------------------------------------------------------------------ */
 
 const findTagNames = (elements) => {
-  // Solution code here...
+  const arr = elements.map(elem => (
+ elem.match(/<\/[^>]*>/gm)
+  ))
+ const result = []
+ arr.map(elem => (
+    elem.map(element => (
+      result.push(element.slice(1, element.length - 1))
+))
+))
+  return result
 };
 
 /* ------------------------------------------------------------------------------------------------
