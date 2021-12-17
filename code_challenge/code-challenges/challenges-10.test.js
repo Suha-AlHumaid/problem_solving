@@ -23,13 +23,9 @@ Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
 const getNames = (arr) => {
-   const result =[]
- arr.forEach(elem => 
-     
-   result.push( elem.name.split("").reverse().join("") )
-    
-    )
-    return result
+  const result = [];
+  arr.forEach((elem) => result.push(elem.name.split("").reverse().join("")));
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,16 +41,11 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  const result=[]
-input.forEach(elem=>
-
-  result.push( elem.filter(num=> num===target))
-)
-let resultLength=0
-result.forEach(elem=>(
-  resultLength += elem.length
-))
-return resultLength
+  const result = [];
+  input.forEach((elem) => result.push(elem.filter((num) => num === target)));
+  let resultLength = 0;
+  result.forEach((elem) => (resultLength += elem.length));
+  return resultLength;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,15 +60,13 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  let sum=0
-  input.map(arr=>{
-  
-    arr.map(elem=>{
-      sum+=elem
-    })
- 
-  })
-return sum
+  let sum = 0;
+  input.map((arr) => {
+    arr.map((elem) => {
+      sum += elem;
+    });
+  });
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,9 +81,7 @@ This function should then raise 2 to the power of the resulting numbers, returni
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
-const divisibleByFiveTwoToThePower = (input) => {
-
-};
+const divisibleByFiveTwoToThePower = (input) => {};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
@@ -171,7 +158,16 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  let str = ""
+  let min = 0;
+  data.forEach((elem) => {
+    if (elem.height >= min) {
+      min  = elem.height
+      str  = elem.name
+    }
+  });
+
+  return str
 };
 
 /* ------------------------------------------------------------------------------------------------

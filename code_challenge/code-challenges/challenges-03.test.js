@@ -222,7 +222,11 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  // Solution code here...
+  const newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(arr[i].slice(i, i + 1));
+  }
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
