@@ -10,7 +10,7 @@ Write a function called addTwo that takes in an array and
 ------------------------------------------------------------------------------------------------ */
 
 const addTwo = (arr) => {
-  // Solution code here...
+
   const newArr=arr.map(elem=>
 elem+2
   )
@@ -27,9 +27,10 @@ in lower case or false if it does not.
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  // Solution code here...
-  const result=str.includes("w")
-  return result;
+
+  const result = str.includes("w")
+
+  return result
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -48,13 +49,13 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
-  let string = String(input);
+  let string = String(input)
   for( let i = 0; i < string.length; i++){
       if(!isNaN(string.charAt(i)) && !(string.charAt(i) === " ") ){
-        return true;
+        return true
       }
   }
-  return false;
+  return false
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,13 +69,13 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
-  let string = String(input);
+  let string = String(input)
   for( let i = 0; i < string.length; i++){
     if(string.includes("world")){
-      return true;
+      return true
     }
 }
-return false;
+return false
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -88,17 +89,32 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+ let result=[]
+const reg=/\b[A-Z].*?\b/g
+  if (str.match(reg)) {
+    result = str.match(reg)
+  }else {
+   result=[]
+  }
+  return result 
+}
 
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
+Write a function named citiesAtoJ that takes in an array of city names and 
+uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let result = []
+  const reg= /\b[A-J].*?\b/g
+  arr.forEach((elem) => {
+    if (elem.split(" ")[0].match(reg)) {
+      result.push(elem)
+    }
+  })
+  return result
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -106,7 +122,8 @@ CHALLENGE 7 - Stretch Goal
 
 You have created a game application and begin by asking users an easy question: In which month is Halloween?
 
-Write a function named matchMonth which uses a regular expression pattern to match any of these inputs: October, Oct, october, oct
+Write a function named matchMonth which uses a regular expression pattern to match any of these inputs: October,
+ Oct, october, oct
 
 If the user enters any of these four inputs, return true. For any other input, return false.
 
@@ -114,7 +131,10 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
+
+  if (input.toString().match(/\b(oct|october|Oct|October)\b/g)) return true
+  return false
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -128,7 +148,9 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = (str) => {
-  // Solution code here...
+
+  return str.match(/[a-z-0-9]+ /gi)
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -146,7 +168,7 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -164,12 +186,10 @@ const seashells =
 
 const findShells = (str) => {
 
-//   const arr = str.split(" ")
-//   console.log(arr);
-//   const newArr=arr.fillter(elem=>
-//     elem.includes("ells")
-//   )
-// return newArr
+  if (str.match(/\b(sells|shells|seashells)\b/g)) {
+    return str.match(/\b(sells|shells|seashells)\b/g)
+  }
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -185,7 +205,7 @@ Run your tests from the console: jest challenges-04.solution.test.js
 describe("Testing challenge 1", () => {
   test("It should add two to every value", () => {
     expect(addTwo([1, 2, 4])).toStrictEqual([3, 4, 6]);
-  });
+  })
 });
 
 describe("Testing challenge 2", () => {

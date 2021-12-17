@@ -180,6 +180,11 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
+  const newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(arr[i].slice(i, i + 1));
+  }
+  return newArr;
 
 };
 
@@ -206,9 +211,8 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-  return arr.sort((a, b) => {
-    return days[a.dayOfWeek] - days[b.dayOfWeek];
-  });
+
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -222,11 +226,8 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  const newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    newArr.push(arr[i].slice(i, i + 1));
-  }
-  return newArr;
+
+
 
 };
 

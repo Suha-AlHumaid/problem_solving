@@ -12,7 +12,12 @@ Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = (people) => {
-  // Solution code here...
+
+  return people.map((elem => 
+    `${elem.firstName} ${elem.lastName}`
+    
+    ))
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,7 +29,7 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-  // Solution code here...
+  return /^(\d{4})$/.test(pin);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,19 +41,23 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
-  // Solution code here...
+
+  return  /^[a-z]{5,10}$/i.test(word);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named hasNumber that uses a regular expression pattern to determine if a string has one or more letter followed by one or more digit.
+Write a function named hasNumber that uses a regular expression pattern to determine 
+if a string has one or more letter followed by one or more digit.
 
 If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
-  // Solution code here...
+
+  return /[a-z][0-9]/i.test(string);
 };
 
 /* ------------------------------------------------------------------------------------------------
