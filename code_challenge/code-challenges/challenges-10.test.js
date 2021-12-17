@@ -81,7 +81,20 @@ This function should then raise 2 to the power of the resulting numbers, returni
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
-const divisibleByFiveTwoToThePower = (input) => {};
+const divisibleByFiveTwoToThePower = (input) => {
+  const result = [];
+
+  input.map((elem) => {
+    const arr = []
+    elem.filter(num=> {
+      if (num % 5 == 0 && typeof num == "number") {
+        arr.push(Math.pow(2, num));
+      }
+    });
+    result.push(arr);
+  });
+  return result
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
@@ -148,7 +161,20 @@ let starWarsData = [
 ];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+
+  // n/a
+  let arr1 = []
+  let min = 0;
+  data.forEach((elem) => {
+    if (elem.gender == "female") {
+      arr1.push(elem.name)
+    }
+    if (elem.gender == "male") {
+      arr1.push(elem.name)
+    }
+  });
+
+  return arr1.join(" and ")
 };
 
 /* ------------------------------------------------------------------------------------------------
