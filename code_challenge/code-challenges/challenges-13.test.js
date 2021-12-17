@@ -19,7 +19,9 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  // Solution code here...
+  return arr.map(elem =>(
+     elem.slice(0, 1)
+    ))
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,19 +33,25 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+
+  return arr.filter(
+    elem=> elem.includes(":)"
+    ));
+
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named standardizePhoneNumbers that takes in an array of phone number strings in (XXX) XXX-XXXX format and returns an array with the phone number strings in XXXXXXXXXX format.
+Write a function named standardizePhoneNumbers that takes in an array of phone number strings in (XXX) XXX-XXXX format
+ and returns an array with the phone number strings in XXXXXXXXXX format.
 
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,21 +79,25 @@ const allHappy = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
-Write a function named findAnything that takes in an array of strings, along with a target string. Return an array containing only those strings from the original array that contain the target string.
+Write a function named findAnything that takes in an array of strings,
+ along with a target string. Return an array containing only those strings from the original array
+  that contain the target string.
 ------------------------------------------------------------------------------------------------ */
 
 const findAnything = (arr, target) => {
-  // Solution code here...
+  return arr.filter(elem => elem.includes(target));
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
-Write a function named findEvery that takes in an array of strings, along with a target string. Return a Boolean based on whether or not every string in the array contains the target string.
------------------------------------------------------------------------------------------------- */
+Write a function named findEvery that takes in an array of strings,along with a target string.
+ Return a Boolean based on whether or not every string in the array contains the target string.
+----------------------------------------------------------------------------------------------- */
 
 const findEvery = (arr, target) => {
-  // Solution code here...
+let result=arr.filter(elem=> elem.includes(target))
+return result.length === arr.length
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,7 +148,14 @@ const daysOfWeek = [
 ];
 
 const sortByDay = (arr) => {
-  // Solution code here...
+ 
+
+ return arr.sort((a,b)=>{
+    a = daysOfWeek.indexOf(a)
+    b = daysOfWeek.indexOf(b)
+    return a < b ? 0 : 1
+  })
+
 };
 
 /* ------------------------------------------------------------------------------------------------

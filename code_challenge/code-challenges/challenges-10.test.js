@@ -23,13 +23,21 @@ Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
 const getNames = (arr) => {
-  // Solution code here...
+   const result =[]
+ arr.forEach(elem => 
+     
+   result.push( elem.name.split("").reverse().join("") )
+    
+    )
+    return result
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named count that, given an integer and an array of arrays, uses either filter, map, or reduce to count the amount of times the integer is present in the array of arrays.
+Write a function named count that, 
+given an integer and an array of arrays, uses either filter, map, 
+or reduce to count the amount of times the integer is present in the array of arrays.
 
 Note: You might need to use the same method more than once.
 
@@ -37,13 +45,23 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  const result=[]
+input.forEach(elem=>
+
+  result.push( elem.filter(num=> num===target))
+)
+let resultLength=0
+result.forEach(elem=>(
+  resultLength += elem.length
+))
+return resultLength
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function that, given an array of integer arrays as input, calculates the total sum of all the elements in the array.
+Write a function that, given an array of integer arrays as input, 
+calculates the total sum of all the elements in the array.
 
 You may want to use filter, map, or reduce for this problem, but are not required to. You may need to use the same method more than once.
 
@@ -51,7 +69,15 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  let sum=0
+  input.map(arr=>{
+  
+    arr.map(elem=>{
+      sum+=elem
+    })
+ 
+  })
+return sum
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,7 +93,7 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------

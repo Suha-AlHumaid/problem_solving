@@ -3,7 +3,8 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named transformToLis that, given an object, returns an array of the key value pairs as html list items.
+Write a function named transformToLis that, given an object, 
+returns an array of the key value pairs as html list items.
 
 For example: 
 {
@@ -19,18 +20,28 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj) {
-  // Solution code here...
+const result=[]
+for(const elem in obj){
+result.push(
+  `<li>${elem}: ${obj[elem]}</li>`
+)
+}
+return result 
 }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named addValues that, given an array of numbers as input, uses reduce to add the values in the array.
+Write a function named addValues that, 
+given an array of numbers as input, uses reduce to add the values in the array.
 
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr) => {
-  // Solution code here...
+
+return arr.reduce((acc, elem)=>{
+ return acc+elem
+},0)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,7 +57,11 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
-  // Solution code here...
+
+  return arr.reduce((acc,elem) => {
+    return acc += elem.purchasePrice
+  },0)
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -58,7 +73,11 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  // Solution code here...
+
+  return arr.reduce(acc => {
+    return acc += 1
+  },0);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
