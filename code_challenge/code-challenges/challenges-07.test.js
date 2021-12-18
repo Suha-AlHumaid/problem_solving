@@ -9,7 +9,7 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 const replaceZeros = (string) => {
   // Solution code here...
   const regex = /0/g;
-return string.replace(regex, 'zero');
+  return string.replace(regex, "zero");
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -20,9 +20,7 @@ Write a function named addOne that, given an array of numbers,
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-return arr.map(elem=>(
-  elem+1
-))
+  return arr.map((elem) => elem + 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,9 +31,7 @@ given an array of strings, uses map to return a new array containing each string
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
-  return arr.map(elem=>(
-    elem+"?"
-  ))
+  return arr.map((elem) => elem + "?");
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,12 +46,11 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
- const result =[]
-for(let i=0 ; i < arr.length ; i++){
-  
-   result.push(Math.pow(2,arr[i]))
-}
-  return result
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(Math.pow(2, arr[i]));
+  }
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,12 +61,9 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-
-  const result =[]
- arr.forEach(elem=>(
-   result.push( Math.pow(2,elem))
-  ))
-  return result
+  const result = [];
+  arr.forEach((elem) => result.push(Math.pow(2, elem)));
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,11 +74,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
- 
-  return arr.map(elem=>(
-    Math.pow(2,elem)
-  ))
-
+  return arr.map((elem) => Math.pow(2, elem));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,11 +88,7 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-
-  return arr.map(elem =>
-     elem.charCodeAt(0)
-     )
-
+  return arr.map((elem) => elem.charCodeAt(0));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,19 +102,16 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  const result = arr.map(elem => {
-    if (typeof elem != "number")
-    {
+  const result = arr.map((elem) => {
+    if (typeof elem != "number") {
       return "N/A";
-    } 
-    else if (elem%2 == 0){
+    } else if (elem % 2 == 0) {
       return "even";
-    } 
-    else {
-      return "odd"
+    } else {
+      return "odd";
     }
-})
-  return result
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -138,7 +119,8 @@ CHALLENGE 9 - Stretch Goal
 
 Use the snorlaxAbilities data, below, for this challenge.
 
-Write a function named extractAbilities that, given the array of abilities, uses map to create an array containing only the ability name.
+Write a function named extractAbilities that, given the array of abilities, 
+uses map to create an array containing only the ability name.
 
 Note: Because this function is expecting the array of abilities, it will be invoked as:
 extractAbilities(snorlaxAbilities.abilities)
@@ -176,7 +158,7 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  return arr.map((elem) => elem.ability.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -184,7 +166,8 @@ CHALLENGE 10 - Stretch Goal
 
 Use the snorlaxStats data, below, for this challenge.
 
-Write a function named extractStats that, given an array of stats, uses map to return an array of objects containing the stat name and the total.
+Write a function named extractStats that, given an array of stats,
+ uses map to return an array of objects containing the stat name and the total.
 
 The total should be the sum of the effort and the baseStat.
 
@@ -223,7 +206,16 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Solution code here...
+  const result = [];
+  arr.map((elem) => {
+    const obj = {
+      name: elem.stat.name,
+      total: elem.baseStat + elem.effort,
+    };
+
+    result.push(obj);
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -131,7 +131,6 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-	Object.values(object1)
 	const arr=[]
 	for (const elem in obj) {
 	

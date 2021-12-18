@@ -96,9 +96,11 @@ return arr.split("")
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-You are making a grocery list for ingredients needed in the gruffalo crumble recipe, below. Rather than taking the entire recipe, you only want a list of the item names.
+You are making a grocery list for ingredients needed in the gruffalo crumble recipe, 
+below. Rather than taking the entire recipe, you only want a list of the item names.
 
-Write a function named listFoods that takes in the recipe and returns a new array of the food items without any amount or units. Just the name. For example, '1 cup flour' will return 'flour'.
+Write a function named listFoods that takes in the recipe and returns a new array of the food items without any amount or units.
+ Just the name. For example, '1 cup flour' will return 'flour'.
 
 Use slice for this function, maybe more than once. The Array.indexOf() method may also be helpful.
 
@@ -134,8 +136,12 @@ const gruffaloCrumble = {
 };
 
 const listFoods = (recipe) => {
-  let result = [];
-  // Solution code here...
+  let result = []
+  return  recipe.ingredients.map(elem => {
+    const str=elem.slice((elem.indexOf(" ") )+ 1)
+   return str.slice((str.indexOf(" "))+1)
+  })
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -191,7 +197,8 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  return arr.filter((number) => number % 2 !== 0)
+  return arr.filter(elem => 
+    (elem % 2 !== 0))
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -223,7 +230,10 @@ given a string of comma-separated values (CSV) as input. (e.g. "1,2,3"),
 
 const totalSumCSV = (str) => {
   let total = 0;
-  // Solution code here...
+str.split(",").forEach(elem=>(
+  total+= Number(elem)
+))
+return total
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -236,7 +246,7 @@ For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
 const removeVowels = (str) => {
-
+return str.split("").filter(elem=>(!elem.match(/[aeiou]/))).join("")
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -250,8 +260,13 @@ Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioo
 ------------------------------------------------------------------------------------------------ */
 
 const extractVowels = (str) => {
-  // Solution code here...
-};
+const result=[]
+result.push(str.split("").filter(elem=>(!elem.match(/[aeiou]/))).join(""))
+result.push(str.split("").filter(elem=>(elem.match(/[aeiou]/))).sort().join(""))
+
+  return result
+ 
+}
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -389,12 +404,12 @@ describe("Testing challenge 8", () => {
 describe("Testing challenge 9", () => {
   test("It should remove the even numbers from the array", () => {
     let list = [1, 2, 3, 4, 5, 6];
-    removeEvenValues(list);
-    expect(list).toStrictEqual([1, 3, 5]);
+
+    expect(removeEvenValues(list)).toStrictEqual([1, 3, 5]);
 
     list = [6, 3, 19, 43, 12, 66, 43];
-    removeEvenValues(list);
-    expect(list).toStrictEqual([3, 19, 43, 43]);
+
+    expect(removeEvenValues(list)).toStrictEqual([3, 19, 43, 43]);
     expect(removeEvenValues(list).length).toStrictEqual(4);
   });
 });

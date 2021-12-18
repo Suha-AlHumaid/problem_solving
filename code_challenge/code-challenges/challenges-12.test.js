@@ -11,7 +11,7 @@ E.g. [4,2,7,5,9,2] -> 9
 const maxInArray = (arr) => {
   // Solution code here...
   let max = Math.max(...arr);
-  return max
+  return max;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,13 +31,13 @@ return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
   // Solution code here...
-  let arr =[]
-matrix.forEach(elem => {
-  let max = Math.max(...elem);
-  arr.push(max)
-});
-let maxArr = Math.max(...arr);
-return maxArr
+  let arr = [];
+  matrix.forEach((elem) => {
+    let max = Math.max(...elem);
+    arr.push(max);
+  });
+  let maxArr = Math.max(...arr);
+  return maxArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,22 +55,19 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  let arr =[]
-  matrix.forEach(elem => {
-    let sum =0
-    elem.forEach(num=>{
-    
-      sum+=num
-    
-    })
-    arr.push(sum)
+  let arr = [];
+  matrix.forEach((elem) => {
+    let sum = 0;
+    elem.forEach((num) => {
+      sum += num;
+    });
+    arr.push(sum);
   });
-  let result=0
-arr.forEach(elem=>{
-  result +=elem
-})
-  return result
-
+  let result = 0;
+  arr.forEach((elem) => {
+    result += elem;
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -111,13 +108,24 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
+  let result = [];
+  stores.map((arr) =>
+    arr.map((elem, i) => {
+      if (result[i]) {
+        result[i] = result[i] + elem;
+      } else {
+        result[i] = elem;
+      }
+    })
+  );
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Pat has decided that he would also like to organize his data as objects containing the number of cookies sold per hour and the time.
+Pat has decided that he would also like to organize his data as objects containing the number of cookies sold per hour 
+and the time.
 
 Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
 
@@ -125,13 +133,24 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  return data.map((elem, i) => {
+    return { sales: `${elem} cookies`, time: hours[i] };
+  });
 };
 
+// Object {
+//   -     "sales": "88 cookies",
+//   -     "time": "9 a.m.",
+//   -   },
+//   -   Object {
+//   -     "sales": "153 cookies",
+//   -     "time": "10 a.m.",
+//   -   },
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named howManyTreats that will return the quantity of treats you need to pick up from the pet store today from this array.
+Write a function named howManyTreats that will 
+return the quantity of treats you need to pick up from the pet store today from this array.
 ------------------------------------------------------------------------------------------------ */
 
 const errands = [
@@ -162,7 +181,17 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  let quantity = "";
+  arr.forEach((elem) => {
+    if (elem.store === "Pet store") {
+      elem.items.forEach((item) => {
+        if (item.name === "Treats") {
+          quantity = item.quantity;
+        }
+      });
+    }
+  });
+  return quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -170,7 +199,8 @@ CHALLENGE 7 - Stretch Goal
 
 Write a function named battleship that accepts a 2D array and two numbers: a row coordinate and a column coordinate.
 
-Return "hit" or "miss" depending on if there's part of a boat at that position in the array. Assume the array has only one of two values at each index. '#' for part of a boat, or ' ' for open water.
+Return "hit" or "miss" depending on if there's part of a boat at that position in the array.
+ Assume the array has only one of two values at each index. '#' for part of a boat, or ' ' for open water.
 
 Here is a sample board:
 [
@@ -184,27 +214,37 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
+  if (board[row][col] == "#") {
+    return "hit";
+  } else {
+    return "miss";
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
-Write a function named calculateProduct that takes in a two-dimensional array of numbers, multiplies all of the numbers in each array, and returns the final product. This function should work for any number of inner arrays.
+Write a function named calculateProduct that takes in a two-dimensional array of numbers,
+ multiplies all of the numbers in each array, and returns the final product. This function should work for any number of inner arrays.
 
 For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let mult = 1;
+  numbers.map((arr) => arr.map((elem) => (mult *= elem)));
+  return mult;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
-Write a function named averageDailyTemperature that accepts a two-dimensional array representing average daily temperatures grouped week-by-week.
+Write a function named averageDailyTemperature that accepts a two-dimensional array representing average daily
+ temperatures grouped week-by-week.
 
-Calculate the average daily temperature during that entire period. Your output should be a single number. Write your function so it could accept an array with any number of weeks given to it.
+Calculate the average daily temperature during that entire period. 
+Your output should be a single number.
+ Write your function so it could accept an array with any number of weeks given to it.
 ------------------------------------------------------------------------------------------------ */
 
 // Real daily average temperatures for Seattle, October 1-28 2017
@@ -216,13 +256,22 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let sum = 0;
+  let countArr = 0;
+  weather.map((arr) => {
+    arr.map((elem) => {
+      sum += elem;
+    });
+    countArr += arr.length;
+  });
+  return sum / countArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
 
-Write a function named lowestWeeklyAverage that accepts a two-dimensional array of daily temperatures grouped week-by-week.
+Write a function named lowestWeeklyAverage that accepts a two-dimensional 
+array of daily temperatures grouped week-by-week.
 
 Calculate the average temperature for each week and return the value of the lowest weekly average temperature.
 
@@ -237,7 +286,19 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+ 
+ 
+  let minAvr = [];
+  weather.map((arr) => {
+    let sum = 0;
+    arr.map((elem) => {
+      sum += elem;
+    })
+    let avr=(sum/arr.length)
+      minAvr.push(avr)
+
+  });
+  return Math.min(...minAvr)
 };
 
 /* ------------------------------------------------------------------------------------------------
